@@ -90,19 +90,16 @@
 
             </div>
             <div class="index_contact">
-                <h2 class="left_h2">Contact Us</h2>
+                <h2 class="left_h2"><?php $classify=M('classify')->where(array('classify_id'=>219))->find();echo $classify['classify_name'];?></h2>
                 <br>
                 <p>
-                    Contact: Weboss
+                    Contact:<?php $contact=M('contact')->where(array('type_id'=>62))->find(); echo $contact['contact'] ?>
                 </p>
                 <p>
-                    Phone: 18926129998
+                    Tel: <?php $contact=M('contact')->where(array('type_id'=>62))->find(); echo $contact['tel'] ?>
                 </p>
                 <p>
-                    Tel: 020-22043297
-                </p>
-                <p>
-                    Add: Guangdong Province, China TianHe District, GuangZhou Num 899
+                    Add: <?php $contact=M('contact')->where(array('type_id'=>62))->find(); echo $contact['addr'] ?>
                 </p>
             </div>
         </div>

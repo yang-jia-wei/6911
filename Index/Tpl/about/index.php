@@ -51,35 +51,28 @@
 
             <ul class="left_news">
 
-                <li><a href="http://demo.weboss.hk/h105/news/html/?422.html" title="新的Google Nexus 10与竞争对手相比如何"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">新的Google Nexus 10与竞争对手相比如何</font></font></a></li>
-
-                <li><a href="http://demo.weboss.hk/h105/news/html/?421.html" title="新的Google Nexus 10与竞争对手相比如何"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">新的Google Nexus 10与竞争对手相比如何</font></font></a></li>
-
-                <li><a href="http://demo.weboss.hk/h105/news/html/?420.html" title="新的Google Nexus 10与竞争对手相比如何"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">新的Google Nexus 10与竞争对手相比如何</font></font></a></li>
-
-                <li><a href="http://demo.weboss.hk/h105/news/html/?419.html" title="新的Google Nexus 10与竞争对手相比如何"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">新的Google Nexus 10与竞争对手相比如何</font></font></a></li>
-
-                <li><a href="http://demo.weboss.hk/h105/news/html/?418.html" title="新的Google Nexus 10与竞争对手相比如何"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">新的Google Nexus 10与竞争对手相比如何</font></font></a></li>
+                <?php $news=M()->table('index_news n,index_relevance r')->where('r.classify_id =210 and r.content_id=n.news_id')->order('date desc')->select();
+                foreach($news as $k=>$v){
+                    ?>
+                    <li><a href="<?php echo content_url($v['type_id'],$v['news_id']);?>" title="<?php echo $v['news_title'];?>"><?php echo $v['news_title'];?></a><span class="news_time"></span></li>
+                <?php }?>
 
             </ul>
 
         </div>
 
         <div class="index_contact">
-            <h2 class="left_h2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">联系我们</font></font></h2>
+            <h2 class="left_h2"><?php $classify=M('classify')->where(array('classify_id'=>219))->find();echo $classify['classify_name'];?></h2>
             <br>
-            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                        联系方式：Weboss
-                    </font></font></p>
-            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                        电话：18926129998
-                    </font></font></p>
-            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                        电话：020-22043297
-                    </font></font></p>
-            <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
-                        地址：广东省广州市天河区899号
-                    </font></font></p>
+            <p>
+                Contact:<?php $contact=M('contact')->where(array('type_id'=>62))->find(); echo $contact['contact'] ?>
+            </p>
+            <p>
+                Tel: <?php $contact=M('contact')->where(array('type_id'=>62))->find(); echo $contact['tel'] ?>
+            </p>
+            <p>
+                Add: <?php $contact=M('contact')->where(array('type_id'=>62))->find(); echo $contact['addr'] ?>
+            </p>
         </div>
     </div>
 

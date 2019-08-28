@@ -1,4 +1,4 @@
-<?php require APP_ROOT.'public/head.php'?>
+<?php if (!defined('THINK_PATH')) exit(); require APP_ROOT.'public/head.php'?>
     <div class="container main">
 <?php require APP_ROOT.'public/top.php';?>
         <div class="path_bg">
@@ -47,9 +47,7 @@
 
                 <ul class="left_news">
 
-                    <?php $news=M()->table('index_news n,index_relevance r')->where('r.classify_id =210 and r.content_id=n.news_id')->order('date desc')->select();
-                    foreach($news as $k=>$v){
-                        ?>
+                    <?php $news=M()->table('index_news n,index_relevance r')->where('r.classify_id =210 and r.content_id=n.news_id')->order('date desc')->select(); foreach($news as $k=>$v){ ?>
                         <li><a href="<?php echo content_url($v['type_id'],$v['news_id']);?>" title="<?php echo $v['news_title'];?>"><?php echo $v['news_title'];?></a><span class="news_time"></span></li>
                     <?php }?>
 
