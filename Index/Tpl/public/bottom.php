@@ -1,4 +1,5 @@
 <!--首页友情链接-->
+
 <div class="container link_box">
     <span class="link_title">Link<button id="link_btn" class="glyphicon glyphicon-plus" aria-hidden="true"></button></span>
     <span class="link_list">
@@ -21,7 +22,7 @@
                 <a class="a2a_button_google_plus" target="_blank" href="http://demo.weboss.hk/#google_plus" rel="nofollow noopener"><span class="a2a_svg a2a_s__default a2a_s_google_plus" style="background-color: rgb(221, 75, 57);"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M27 15h-2v-2h-2v2h-2v2h2v2h2v-2h2m-15-2v2.4h3.97c-.16 1.03-1.2 3.02-3.97 3.02-2.39 0-4.34-1.98-4.34-4.42s1.95-4.42 4.34-4.42c1.36 0 2.27.58 2.79 1.08l1.9-1.83C15.47 9.69 13.89 9 12 9c-3.87 0-7 3.13-7 7s3.13 7 7 7c4.04 0 6.72-2.84 6.72-6.84 0-.46-.05-.81-.11-1.16H12z" fill="#FFF"></path></svg></span><span class="a2a_label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Google+的</font></font></span></a>
                 <a class="a2a_button_linkedin" target="_blank" href="http://demo.weboss.hk/#linkedin" rel="nofollow noopener"><span class="a2a_svg a2a_s__default a2a_s_linkedin" style="background-color: rgb(0, 123, 181);"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z" fill="#FFF"></path></svg></span><span class="a2a_label">LinkedIn</span></a>
                 <div style="clear: both;"></div></div>
-            <script type="text/javascript" src="js/page.js.下载"></script>
+            <script type="text/javascript" src="js/page.js"></script>
             <!-- AddToAny END -->
         </div>
     </div>
@@ -34,4 +35,6 @@
     <div class="foot_nav">
         <a id="gototop" href="http://demo.weboss.hk/h105/index.php#"><span class="glyphicon glyphicon-circle-arrow-up btn-lg" aria-hidden="true"></span>Top</a>
     </div>
-</nav><script charset="UTF-8" src="js/zh-CN.js.下载"></script>
+</nav>
+
+<script charset="UTF-8" src="js/zh-CN.js"></script>

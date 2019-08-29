@@ -18,7 +18,7 @@
             foreach($goods as $k=>$v){  ?>
                 <div class="col-sm-4 col-md-4 col-mm-6 product_img" style="transition: all 1s ease 0s, opacity 1.5s ease 0s;">
                     <a href="<?php echo content_url($v['type_id'],$v['content_id']);?>"><img src="<?php echo $v['goods_img'];?>" class="img-thumbnail" alt="<?php echo $v['goods_name'];?>"></a>
-                    <p class="product_title"><a href="" title="<?php echo $v['goods_name'];?>"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><?php echo $v['goods_name'];?></font></font></a></p>
+                    <p class="product_title"><a href="<?php echo content_url($v['type_id'],$v['content_id']);?>" title="<?php echo $v['goods_name'];?>"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><?php echo $v['goods_name'];?></font></font></a></p>
                 </div>
             <?php }?>
             <?php require APP_ROOT.'public/page.php';?>

@@ -38,9 +38,9 @@
                     <ul class="product_info">
                         <?php echo $goods['goods_intro'];?>
                         <li>
-                            <form id="orderform" method="get" action="http://demo.weboss.hk/h105/product/class/index.php">
+                            <form id="orderform" method="get" action="">
                                 <input type="hidden" name="key" value="As I swim N568 vehicle traveling data recorder">
-                                <a href="http://demo.weboss.hk/h105/page/html/feedback.php" class="btn btn-info page-btn"><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 查询</font></font></a>
+                                <a href="" class="btn btn-info page-btn"><span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 查询</font></font></a>
                             </form></li>
                     </ul>
                 </div>

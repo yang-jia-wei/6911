@@ -24,15 +24,14 @@
     <meta name="keywords" content="keywords">
     <meta name="description" content="memomemomemomemomemo">
     <meta name="applicable-device" content="pc,mobile">
-    <link href="css/css" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/bxslider.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <script async="" src="js/icons.26.svg.js.下载"></script>
-    <script src="js/jquery.min.js.下载"></script>
-    <script src="js/bxslider.min.js.下载"></script>
-    <script src="js/common.js.下载"></script>
-    <script src="js/bootstrap.js.下载"></script>
+    <script async="" src="js/icons.26.svg.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bxslider.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/bootstrap.js"></script>
     <!--[if lt IE 9]>
     <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
