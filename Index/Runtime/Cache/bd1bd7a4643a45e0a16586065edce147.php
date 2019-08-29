@@ -11,45 +11,39 @@
 
         <div class="feedback">
 
-            <form id="feedbackform" name="myform" class="form-horizontal" method="post" action="http://demo.weboss.hk/h105/feedback/post.php" onsubmit="return CheckJob()">
+            <form id="feedbackform" name="myform" class="form-horizontal" method="post" action="?" onsubmit="return CheckJob()">
 
                 <div class="form-group">
-                    <label for="title" class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">标题： </font></font></label>
+                    <label for="title" class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">标题：<font style="color:red"><font style="vertical-align: inherit;">*</font></font> </font></font></label>
                     <div class="col-sm-6">
-                        <input type="text" name="title" value="" class="form-control" id="title" placeholder="Required"><font style="color:red"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">*</font></font></font>
+                        <input type="text" name="title" value="" class="form-control" id="title" placeholder="请输入标题">
+
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="title" class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">你的名字： </font></font></label>
+                    <label for="title" class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">名字：<font style="color:red"><font style="vertical-align: inherit;">*</font></font> </font></font></label>
                     <div class="col-sm-6">
-                        <input type="text" name="content" value="" class="form-control" id="title" placeholder="Required">
+                        <input type="text" name="content" value="" class="form-control" id="title" placeholder="请输入名字">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="title" class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">电话： </font></font></label>
+                    <label for="title" class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">电话：<font style="color:red"><font style="vertical-align: inherit;">*</font></font> </font></font></label>
                     <div class="col-sm-6">
-                        <input type="text" name="company" value="" class="form-control" id="title" placeholder="Required">
+                        <input type="text" name="company" value="" class="form-control" id="title" placeholder="请输入电话">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="title" class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">电子邮件： </font></font></label>
                     <div class="col-sm-6">
-                        <input type="text" name="name" value="" class="form-control" id="title" placeholder="Required">
+                        <input type="text" name="name" value="" class="form-control" id="title" placeholder="请输入电子邮件">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="title" class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">加： </font></font></label>
-                    <div class="col-sm-6">
-                        <input type="text" name="tel" value="" class="form-control" id="title" placeholder="Required">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="contents" class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">信息： </font></font></label>
+                    <label for="contents" class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">内容： </font></font></label>
                     <div class="col-sm-6">
                         <textarea name="address" class="form-control" rows="3"></textarea>
                     </div>
