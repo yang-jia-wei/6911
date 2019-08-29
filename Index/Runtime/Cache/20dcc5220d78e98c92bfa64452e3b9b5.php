@@ -33,14 +33,25 @@
 
             <ul class="left_nav_ul" id="firstpane">
 
-                <li><a class="biglink" href="http://demo.weboss.hk/h105/page/html/about.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">关于我们</font></font></a>
-                    <ul class="left_snav_ul menu_body"></ul></li>
+                <li>
+                    <a class="biglink" href="">
+                        <font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><?php $classify=M('classify')->where(array('classify_id'=>218))->find();echo $classify['classify_name'];?></font></font>
+                    </a>
+                    <ul class="left_snav_ul menu_body"><?php $classify=M('classify')->where(array('classify_id'=>218))->find();echo $classify['classify_name'];?></ul>
+                </li>
 
-                <li><a class="biglink" href="http://demo.weboss.hk/h105/page/html/contact.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">联系我们</font></font></a>
-                    <ul class="left_snav_ul menu_body"></ul></li>
+                <li>
+                    <a class="biglink" href="<?php $classify=M('classify')->where(array('classify_id'=>219))->find();echo $classify['classify_url'];?>">
+                        <font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><?php $classify=M('classify')->where(array('classify_id'=>219))->find();echo $classify['classify_name'];?></font></font
+                        ></a>
+                    <ul class="left_snav_ul menu_body"><?php $classify=M('classify')->where(array('classify_id'=>219))->find();echo $classify['classify_name'];?></ul>
+                </li>
 
-                <li><a class="biglink" href="http://demo.weboss.hk/h105/page/html/feedback.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">反馈</font></font></a>
-                    <ul class="left_snav_ul menu_body"></ul></li>
+                <li>
+                    <a class="biglink" href="<?php $classify=M('classify')->where(array('classify_id'=>220))->find();echo $classify['classify_url'];?>"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><?php $classify=M('classify')->where(array('classify_id'=>220))->find();echo $classify['classify_name'];?></font></font>
+                    </a>
+                    <ul class="left_snav_ul menu_body"><?php $classify=M('classify')->where(array('classify_id'=>220))->find();echo $classify['classify_name'];?></ul>
+                </li>
 
             </ul>
 

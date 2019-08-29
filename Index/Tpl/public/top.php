@@ -1,18 +1,13 @@
 <?php require APP_ROOT.'public/head.php';?>
 <div class="row top_menu">
     <div class="col-xs-12 col-sm-9 col-md-9 top_name">
-        <p>
-            <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>
-            <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">&nbsp; <?php echo $site['mobile'];?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font>
-            </font>
-        </p>
+        <p><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&nbsp; <?php echo $site['mobile'];?></font></font></p>
         <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>&nbsp; <a href="javascript:;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><?php echo $site['email'];?></font></font></a></p>
     </div>
     <div id="topsearch" class="col-xs-12 col-sm-3 col-md-3">
-        <form id="searchform" method="get" action="http://demo.weboss.hk/h105/product/class/index.php">
+        <form id="searchform" method="post" action="index.php?m=goods&a=serach">
             <div class="input-group search_group">
-                <input type="text" name="key" class="form-control input-sm" placeholder="Product search">
+                <input type="text" name="search" class="form-control input-sm" placeholder="Product search">
                 <span class="input-group-btn">
                   <span id="submit_search" onclick="searchform.submit();" title="产品搜索" class="glyphicon glyphicon-search btn-lg" aria-hidden="true"></span>
               </span>
@@ -40,7 +35,7 @@
         foreach($list as $k=>$v){
             ?>
     <li class="dropdown"><a href="<?php echo classify_url($v['type_id'],$v['classify_id']);?>"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><?php $classify=M('classify')->where(array('classify_id'=>$v['classify_id']))->find();echo $classify['classify_name'];?></font></font></a>
-        <a href="http://demo.weboss.hk/h105/product/class/" id="app_menudown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+        <a href="" id="app_menudown" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
             <span class="glyphicon glyphicon-menu-down btn-xs"></span>
         </a>
 <!--        二级导航     -->
@@ -48,7 +43,7 @@
                            <?php if($listcs !=''){ ?>
             <ul class="dropdown-menu nav_small" role="menu" style="display: none;">
                 <?php foreach($listcs as $k2=>$v2){?>
-            <li><a href="http://demo.weboss.hk/h105/product/class/?115.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><?php $classify=M('classify')->where(array('classify_id'=>$v2['classify_id']))->find();echo $classify['classify_name'];?></font></font></a></li>
+            <li><a href="<?php echo classify_url($v2['type_id'],$v2['classify_id']);?>"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><?php $classify=M('classify')->where(array('classify_id'=>$v2['classify_id']))->find();echo $classify['classify_name'];?></font></font></a></li>
                 <?php }?>
             </ul>
              <?php } ?>

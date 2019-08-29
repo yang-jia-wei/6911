@@ -10,38 +10,38 @@
         <!-- right -->
         <div class="col-xs-12 col-sm-8 col-md-9" style="float:right">
             <div class="list_box">
-                <h2 class="left_h2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">下</font></font></h2>
+                <h2 class="left_h2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">下载</font></font></h2>
                 <ul class="list_news">
-                    <?php $download=M()->table('index_download n,index_relevance r')->where('r.classify_id =221 and r.content_id=n.download_id')->order('date desc')->select();foreach($download as $k=>$v){?>
-                    <li><a href="" title="该网站使用教程"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><?php echo $v['download_name'];?></font></font></a><font style="vertical-align: inherit;"><span class="news_time"><font style="vertical-align: inherit;"><?php echo cover_time($v['download_date'],'Y-m-d H:i:s');?>
-                    <?php }?>
-
-
+                <?php $perpage=3;$offset=($p-1)*$perpage;
+                $download = M()->table('index_download n,index_relevance r')->where('r.classify_id ='.$classify_id.' and r.content_id=n.download_id')->order('date desc')->limit($offset,$perpage)->select();
+                $total_num=M()->table('index_download n,index_relevance r')->where('r.classify_id ='.$classify_id.' and r.content_id=n.download_id')->count();
+                foreach($download as $k=>$v){  ?>
+                    <li><a href="<?php echo content_url($v['type_id'],$v['download_id']);?>" title="<?php echo $v['download_name'];?>"><?php echo $v['download_name'];?></a><span class="news_time"></span></li>
+                <?php }?>
                 </ul>
-                <div class="page">
-                    <span class="current"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1</font></font></span>
-                </div>
+
+                <?php require APP_ROOT.'public/page.php';?>
             </div>
         </div>
 
         <!-- left -->
         <div class="col-xs-12 col-sm-4 col-md-3">
-            <div class="left_nav" id="categories">
-                <h2 class="left_h2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">分类</font></font></h2>
-
-                <ul class="left_nav_ul" id="firstpane">
-
-                    <li><a class="biglink" href="http://demo.weboss.hk/h105/down/class/?1.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">帮助文档</font></font></a>
-                        <ul class="left_snav_ul menu_body">
-                        </ul></li>
-
-                    <li><a class="biglink" href="http://demo.weboss.hk/h105/down/class/?2.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文件下载</font></font></a>
-                        <ul class="left_snav_ul menu_body">
-                        </ul></li>
-
-                </ul>
-
-            </div>
+<!--            <div class="left_nav" id="categories">-->
+<!--                <h2 class="left_h2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">分类</font></font></h2>-->
+<!---->
+<!--                <ul class="left_nav_ul" id="firstpane">-->
+<!---->
+<!--                    <li><a class="biglink" href="http://demo.weboss.hk/h105/down/class/?1.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">帮助文档</font></font></a>-->
+<!--                        <ul class="left_snav_ul menu_body">-->
+<!--                        </ul></li>-->
+<!---->
+<!--                    <li><a class="biglink" href="http://demo.weboss.hk/h105/down/class/?2.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文件下载</font></font></a>-->
+<!--                        <ul class="left_snav_ul menu_body">-->
+<!--                        </ul></li>-->
+<!---->
+<!--                </ul>-->
+<!---->
+<!--            </div>-->
             <div class="left_news">
                 <h2 class="left_h2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">最新消息</font></font></h2>
 

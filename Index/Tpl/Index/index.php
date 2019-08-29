@@ -40,11 +40,11 @@ var PDV_PAGENAME='index';
 <div class="row imgGroup">
 <?php $photo_album=M()->table('index_photo_album n,index_relevance r')->where('r.classify_id =213 and r.content_id=n.photo_album_id')->order('date desc')->select();foreach($photo_album as $k=>$v){?>
     <div class="imgGroup-1" data-move-y="170px">
-            <div><a href="http://demo.weboss.hk/h105/photo/html/?58.html"><img src="<?php echo $v['photo_img'];?>" alt="<?php echo $v['name'];?>"></a></div>
+            <div><a href="<?php echo classify_url($v['type_id'],$v['classify_id']);?>"><img src="<?php echo $v['photo_img'];?>" alt="<?php echo $v['name'];?>"></a></div>
     </div>
 <?php }?>
 <!-- <div class="imgGroup-3" data-move-y="170px">-->
-<!--                <div><a href="http://demo.weboss.hk/h105/photo/html/?58.html"><img src="images/1534946585.jpg" alt="广告标题"></a></div>-->
+<!--                <div><a href=""><img src="images/1534946585.jpg" alt="广告标题"></a></div>-->
 <!--            </div>-->
 
 </div>
@@ -59,11 +59,11 @@ var PDV_PAGENAME='index';
                     <?php $goods=M()->table('index_goods n,index_relevance r')->where('r.classify_id =212 and r.content_id=n.goods_id')->order('date desc')->select();
                     foreach($goods as $k=>$v){?>
                     <div class="col-sm-4 col-md-3 col-mm-6 product_img" data-move-y="190px" style="transition: all 1s ease 0s, opacity 1.5s ease 0s; opacity: 0; transform: translateY(190px);">
-                    <a href=""><img src="<?php echo $v['goods_img'];?>" class="img-thumbnail" alt=""></a>
+                    <a href="<?php echo classify_url($v['type_id'],$v['classify_id']);?>"><img src="<?php echo $v['goods_img'];?>" class="img-thumbnail" alt=""></a>
                     <p class="product_title">
-                        <a href="" title="<?php echo $v['goods_name'];?>">
+                        <a href="<?php echo classify_url($v['type_id'],$v['classify_id']);?>" title="<?php echo $v['goods_name'];?>">
                             <font style="vertical-align:inherit;">
-                                <font style="vertical-align: inherit;"><?php echo $v['goods_name'];?></font>
+                                <font style="vertical-align: inherit;">11<?php echo $v['goods_name'];?></font>
                             </font>
                         </a>
                     </p>
@@ -87,7 +87,7 @@ var PDV_PAGENAME='index';
                         <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><?php echo cover_time($v['neew_date'],'d');?> </font></font></strong>
                         <i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><?php echo cover_time($v['neew_date'],'Y-m');?></font></font></i>
                         </span>
-                        <a href="http://demo.weboss.hk/h105/news/html/?422.html" title="<?php echo $v['news_title'];?>"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><?php echo $v['news_title'];?></font></font></a><br>
+                        <a href="<?php echo classify_url($v['type_id'],$v['classify_id']);?>" title="<?php echo $v['news_title'];?>"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><?php echo $v['news_title'];?></font></font></a><br>
                         <em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><?php echo $v['news_title'];?></font></font></em>
                     </li>
                 <?php }?>

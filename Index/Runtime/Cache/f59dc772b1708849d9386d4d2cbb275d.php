@@ -1,9 +1,11 @@
 <?php if (!defined('THINK_PATH')) exit(); require APP_ROOT.'public/head.php'?>
     <div class="container main">
 <?php require APP_ROOT.'public/top.php';?>
+        <!--            接值（$news_id）-->
+        <?php $news=M('news')->where(array('news_id'=>$content_id))->find(); ?>
         <div class="path_bg">
             <span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;&nbsp;
-            <a href="http://demo.weboss.hk/h105/">Home</a>&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;<a href="http://demo.weboss.hk/h105/news/class/">News</a>&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;Company new&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;How new Google Nexus 10 compares with rivals
+            <a href="http://demo.weboss.hk/h105/">Home</a>&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;<a href="http://demo.weboss.hk/h105/news/class/">News</a>&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;Company new&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;<?php echo $news['title']?>>
         </div>
 
         <!-- right -->
@@ -17,26 +19,27 @@
                     <?php $news=M('news')->where(array('news_id'=>$page))->find();echo $news['news_content'];?>
                     </div>
 
-                <div class="point">
-                    <span class="to_prev col-xs-12 col-sm-6 col-md-6">PREVIOUS:No previous</span>
-                    <span class="to_next col-xs-12 col-sm-6 col-md-6">NEXT:<a href="" title="">How new Google Nexus 10 compares with rivals</a></span>
-                </div>
+<!--                <div class="point">-->
+<!--                    <span class="to_prev col-xs-12 col-sm-6 col-md-6">PREVIOUS:No previous</span>-->
+<!--                    <span class="to_next col-xs-12 col-sm-6 col-md-6">NEXT:<a href="" title="">How new Google Nexus 10 compares with rivals</a></span>-->
+<!--                </div>-->
+                <?php  $news_gt = M()->table('index_news n,index_relevance r')->where('r.classify_id ='.$classify_id.' and n.date > '.$news['date'].' and r.content_id=n.news_id')->order('date asc')->find(); if(!empty($news_gt)){?>
+                    <div class="f14464847355"><a class="f14464847356" href="<?php echo content_url($news_gt['type_id'],$news_gt['news_id']) ?>">上一篇：<?php echo $news_gt['news_title'];?></a></div>
+                <?php }?>
+                <?php  $news_lt = M()->table('index_news n,index_relevance r')->where('r.classify_id ='.$classify_id.' and n.date < '.$news['date'].' and r.content_id=n.news_id')->order('date desc')->find(); if(!empty($news_lt)){?>
+                    <div class="f14464847355"><a class="f14464847356" href="<?php echo content_url($news_lt['type_id'],$news_lt['news_id']) ?>">下一篇：<?php echo $news_lt['news_title'];?></a></div>
+                <?php }?>
+
             </div>
 
             <div class="list_related">
-                <h2 class="left_h2">Related News</h2>
+                <h2 class="left_h2">相关新闻</h2>
 
                 <ul class="list_news related_news">
-
-                    <li><a href="http://demo.weboss.hk/h105/news/html/?422.html" title="How new Google Nexus 10 compares with rivals">How new Google Nexus 10 compares with rivals</a><span class="news_time">2010-01-25</span></li>
-
-                    <li><a href="http://demo.weboss.hk/h105/news/html/?421.html" title="How new Google Nexus 10 compares with rivals">How new Google Nexus 10 compares with rivals</a><span class="news_time">2010-01-25</span></li>
-
-                    <li><a href="http://demo.weboss.hk/h105/news/html/?404.html" title="How new Google Nexus 10 compares with rivals">How new Google Nexus 10 compares with rivals</a><span class="news_time">2010-01-25</span></li>
-
-                    <li><a href="http://demo.weboss.hk/h105/news/html/?420.html" title="How new Google Nexus 10 compares with rivals">How new Google Nexus 10 compares with rivals</a><span class="news_time">2010-01-25</span></li>
-
-                    <li><a href="http://demo.weboss.hk/h105/news/html/?418.html" title="How new Google Nexus 10 compares with rivals">How new Google Nexus 10 compares with rivals</a><span class="news_time">2010-01-25</span></li>
+                    <?php $news2=M()->table('index_news n,index_relevance r')->where('r.classify_id =210 and r.content_id=n.news_id')->order('date desc')->select(); foreach($news2 as $k2=>$v2){?>
+                    <li><a href="<?php echo content_url($v2['type_id'],$v2['news_id']) ?>" title="<?php echo $v2['news_title'];?>"><?php echo $v2['news_title'];?></a><span class="news_time"><?php echo cover_time($v2['news_date'],'Y-m-d');?></span></li>
+                    <?php }?>
+                    
 
                 </ul>
 

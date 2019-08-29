@@ -61,7 +61,7 @@
                         <input type="text" name="ImgCode" class="form-control" id="code">
                     </div>
                     <div class="col-xs-2 col-sm-1">
-                        <img class="codeimg" src="./反馈 - 外贸模板网站_files/codeimg.php" onclick="this.src=this.src+&quot;?&quot;+Math.random()">
+                        <img class="codeimg" src="" onclick="this.src=this.src+&quot;?&quot;+Math.random()">
                     </div>
                 </div>
                 <div class="form-group">
@@ -83,15 +83,25 @@
             <h2 class="left_h2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">分类</font></font></h2>
 
             <ul class="left_nav_ul" id="firstpane">
+                <li>
+                    <a class="biglink" href="<?php $classify=M('classify')->where(array('classify_id'=>218))->find(); echo $classify['classify_url'];?>">
+                        <font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><?php $classify=M('classify')->where(array('classify_id'=>218))->find();echo $classify['classify_name'];?></font></font>
+                    </a>
+                    <ul class="left_snav_ul menu_body"><?php $classify=M('classify')->where(array('classify_id'=>218))->find();echo $classify['classify_name'];?></ul>
+                </li>
 
-                <li><a class="biglink" href="http://demo.weboss.hk/h105/page/html/about.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">关于我们</font></font></a>
-                    <ul class="left_snav_ul menu_body"></ul></li>
+                <li>
+                    <a class="biglink" href="<?php $classify=M('classify')->where(array('classify_id'=>219))->find();echo $classify['classify_url'];?>">
+                        <font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><?php $classify=M('classify')->where(array('classify_id'=>219))->find();echo $classify['classify_name'];?></font></font
+                        ></a>
+                    <ul class="left_snav_ul menu_body"><?php $classify=M('classify')->where(array('classify_id'=>219))->find();echo $classify['classify_name'];?></ul>
+                </li>
 
-                <li><a class="biglink" href="http://demo.weboss.hk/h105/page/html/contact.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">联系我们</font></font></a>
-                    <ul class="left_snav_ul menu_body"></ul></li>
-
-                <li><a class="biglink" href="http://demo.weboss.hk/h105/page/html/feedback.php"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">反馈</font></font></a>
-                    <ul class="left_snav_ul menu_body"></ul></li>
+                <li>
+                    <a class="biglink" href="<?php $classify=M('classify')->where(array('classify_id'=>220))->find();echo $classify['classify_url'];?>"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><?php $classify=M('classify')->where(array('classify_id'=>220))->find();echo $classify['classify_name'];?></font></font>
+                    </a>
+                    <ul class="left_snav_ul menu_body"><?php $classify=M('classify')->where(array('classify_id'=>220))->find();echo $classify['classify_name'];?></ul>
+                </li>
 
             </ul>
 

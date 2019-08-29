@@ -1,27 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0036)http://demo.weboss.hk/h105/index.php -->
 <html lang="zh-CN" class="translated-ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>首页 - 外贸模板网站</title>
-    <meta name="keywords" content="keywords">
-    <meta name="description" content="memomemomemomemomemo">
-    <meta name="applicable-device" content="pc,mobile">
-    <link href="css/css" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/bxslider.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <script async="" src="js/icons.26.svg.js.下载"></script>
-    <script src="js/jquery.min.js.下载"></script>
-    <script src="js/bxslider.min.js.下载"></script>
-    <script src="js/common.js.下载"></script>
-    <script src="js/bootstrap.js.下载"></script>
-    <!--[if lt IE 9]>
-    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" charset="UTF-8" href="css/translateelement.css">
     <?php
     $site =get_site();
 
@@ -39,6 +18,27 @@
     if($balance=='')$balance=0.00;
     $mobile_url='mobile.php?'.$_SERVER["QUERY_STRING"];
     ?>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?php echo $site['company_name'];?></title>
+    <meta name="keywords" content="keywords">
+    <meta name="description" content="memomemomemomemomemo">
+    <meta name="applicable-device" content="pc,mobile">
+    <link href="css/css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bxslider.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script async="" src="js/icons.26.svg.js.下载"></script>
+    <script src="js/jquery.min.js.下载"></script>
+    <script src="js/bxslider.min.js.下载"></script>
+    <script src="js/common.js.下载"></script>
+    <script src="js/bootstrap.js.下载"></script>
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="css/translateelement.css">
+
 </head>
 <body style="overflow-x: hidden;">
 <?php if(file_exists('mobile.php')){?>

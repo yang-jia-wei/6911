@@ -3,7 +3,7 @@
         <?php require APP_ROOT.'public/top.php';?>
         <div class="path_bg">
             <span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;&nbsp;
-            <a href="http://demo.weboss.hk/h105/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">首页</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> &nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp; </font></font><a href="http://demo.weboss.hk/h105/product/class/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">产品</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> &nbsp;&nbsp;&nbsp;&gt;<?php $classify=M('classify')->where(array('classify_id'=>214))->find();echo $classify['classify_name'];?>
+            <a href="http://demo.weboss.hk/h105/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">首页</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> &nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp; </font></font><a href="http://demo.weboss.hk/h105/product/class/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">产品</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> &nbsp;&nbsp;&nbsp;&gt;产品
                 </font></font></div>
 
         <!-- right -->
@@ -13,7 +13,7 @@
 
                 <div class="product_list product_list2">
                     <?php $perpage=3;$offset=($p-1)*$perpage;
-                    $goods = M()->table('index_goods n,index_relevance r')->where('r.classify_id ='.$classify_id.' and r.content_id=n.goods_id and n.goods_classify_id=214')->order('date desc')->limit($offset,$perpage)->select();
+                    $goods = M()->table('index_goods n,index_relevance r')->where('r.classify_id ='.$classify_id.' and r.content_id=n.goods_id and n.goods_classify_id=216')->order('date desc')->limit($offset,$perpage)->select();
                     $total_num=M()->table('index_goods n,index_relevance r')->where('r.classify_id ='.$classify_id.' and r.content_id=n.goods_id')->count();
                     foreach($goods as $k=>$v){  ?>
                         <div class="col-sm-4 col-md-4 col-mm-6 product_img" style="transition: all 1s ease 0s, opacity 1.5s ease 0s;">
