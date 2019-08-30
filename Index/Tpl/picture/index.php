@@ -12,18 +12,23 @@
         <h2 class="left_h2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">照片</font></font></h2>
 
         <div class="product_list product_list2">
-            <?php $picture=M()->table('index_picture n,index_relevance r')->where('r.classify_id =222 and r.content_id=n.picture_id')->order('date desc')->select();foreach($picture as $k=>$v){?>
-            <div class="col-sm-4 col-md-4 col-mm-6 product_img" style="transition: all 1s ease 0s, opacity 1.5s ease 0s; opacity: 1;">
-                <a href="http://demo.weboss.hk/h105/photo/html/?60.html"><img src="<?php echo $v['picture_img'];?>" class="img-thumbnail" alt="员工相册"></a>
-                <p class="product_title"><a href="" title="<?php echo $v['picture_name'];?>"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><?php echo $v['picture_name'];?></font></font></a></p>
-            </div>
+
+
+            <?php $perpage=3;$offset=($p-1)*$perpage;
+            $picture = M()->table('index_picture n,index_relevance r')->where('r.classify_id ='.$classify_id.' and r.content_id=n.picture_id')->order('date desc')->limit($offset,$perpage)->select();
+            $total_num=M()->table('index_picture n,index_relevance r')->where('r.classify_id ='.$classify_id.' and r.content_id=n.picture_id')->count();
+            foreach($picture as $k=>$v){  ?>
+                <div class="col-sm-4 col-md-4 col-mm-6 product_img" style="transition: all 1s ease 0s, opacity 1.5s ease 0s;">
+                    <a href="<?php echo content_url($v['type_id'],$v['content_id']);?>"><img src="<?php echo $v['picture_img'];?>" class="img-thumbnail" alt="<?php echo $v['picture_name'];?>"></a>
+                    <p class="product_title"><a href="<?php echo content_url($v['type_id'],$v['content_id']);?>" title="<?php echo $v['picture_name'];?>"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><?php echo $v['picture_name'];?></font></font></a></p>
+                </div>
             <?php }?>
-
+            <?php require APP_ROOT.'public/page.php';?>
 
         </div>
-        <div class="page">
-            <span class="current"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1</font></font></span>
-        </div>
+<!--        <div class="page">-->
+<!--            <span class="current"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1</font></font></span>-->
+<!--        </div>-->
 
     </div>
 </div>

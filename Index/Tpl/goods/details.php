@@ -34,7 +34,7 @@
                 </div>
                 <!-- product_info -->
                 <div class="col-sm-12 col-md-6 proinfo_box">
-                    <h1 class="product_h1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这是测品名称</font></font></h1>
+                    <h1 class="product_h1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> <?php echo $goods['goods_name'];?></font></font></h1>
                     <ul class="product_info">
                         <?php echo $goods['goods_intro'];?>
                         <li>

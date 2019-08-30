@@ -33,14 +33,14 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="title" class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">电话：<font style="color:red"><font style="vertical-align: inherit;">*</font></font> </font></font></label>
+                        <label for="title" class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">手机号码：<font style="color:red"><font style="vertical-align: inherit;">*</font></font> </font></font></label>
                         <div class="col-sm-6">
-                            <input type="text" name="data[tel]" value="" class="form-control" id="tel" placeholder="请输入电话">
+                            <input type="text" name="data[tel]" value="" class="form-control" id="tel" placeholder="请输入手机号码">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="title" class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">电子邮箱： </font></font></label>
+                        <label for="title" class="col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">电子邮箱： <font style="color:red"><font style="vertical-align: inherit;">*</font></font> </font></font></label>
                         <div class="col-sm-6">
                             <input type="text" name="data[email]" value="" class="form-control" id="email" placeholder="请输入电子邮件">
                         </div>
@@ -56,16 +56,17 @@
                     <div class="form-group">
                         <label for="code" class="col-xs-12 col-sm-3 control-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">验证码： </font></font></label>
                         <div class="col-xs-7 col-sm-2">
-                            <input type="text" name="ImgCode" class="form-control" id="code">
+                            <input type="text" name="data[verify]" class="form-control" id="code">
                         </div>
                         <div class="col-xs-2 col-sm-1">
-                            <img class="codeimg" src="" onclick="this.src=this.src+&quot;?&quot;+Math.random()">
+<!--                            <img class="codeimg" src="" onclick="this.src=this.src+&quot;?&quot;+Math.random()">-->
+                            <img   style="height:25px; width:60px;" title="点击可更换验证码" src="index.php?m=Index&a=verify" alt="" onclick="this.src='index.php?m=Index&a=verify&code='+Math.random()">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-3 col-sm-10">
                             <button type="submit" name="button" value="Send" class="btn btn-danger page-btn"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">发送</font></font></button>&nbsp;
-                            <button type="reset" name="reset" class="btn btn-default grey-btn"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">重启</font></font></button>
+                            <button type="reset" name="reset" class="btn btn-default grey-btn"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">清空</font></font></button>
                         </div>
                     </div>
                     <input type="hidden" name="act" value="formsend">
@@ -136,15 +137,32 @@
     </div>
 <?php require APP_ROOT.'public/bottom.php'?>
 <?php require APP_ROOT.'public/foot.php'?>
-        <script type="text/javascript">
-            function return_message()
-            {
-                <?php  $input = M('input')->where(array('type_id'=>11,'show_switch'=>2,'required_switch'=>2,'input_pid'=>array('exp','is null')))->order('date asc')->select();  foreach($input as $k=>$v){?>
-                if($("#<?php echo $v['field_name'];?>").val()=='')
-                {
-                    alert("<?php echo $v['prompt'];?>");
-                    return false;
-                }
-                <?php }?>
-            }
-        </script>
+<script type="text/javascript">
+    function return_message()
+    {
+        <?php  $input = M('input')->where(array('type_id'=>11,'show_switch'=>2,'required_switch'=>2,'input_pid'=>array('exp','is null')))->order('date asc')->select();  foreach($input as $k=>$v){?>
+        if($("#<?php echo $v['field_name'];?>").val()=='')
+        {
+            alert("<?php echo $v['prompt'];?>");
+            return false;
+        }
+        <?php }?>
+    }
+</script>
+<script>
+    $('#tel').blur(function(){
+        var phone = $('#tel').val();
+        if(!(/^1[3456789]\d{9}$/.test(phone))){
+            alert("手机号码有误，请重填");
+            return false;
+        }
+    });
+    $('#email').blur(function(){
+        var reg =/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/;
+        var mail=$('#email').val();
+        if(!reg.test(mail)){
+            alert('邮箱不合法')
+            return false;
+        }
+    });
+</script>

@@ -9,4 +9,19 @@ class IndexAction extends Action {
    			
         $this->display();
     }
+
+// 验证码
+  public function verify(){
+    import('ORG.Util.Image');
+    ob_end_clean();
+    Image::buildImageVerify();
+
+      if($_SESSION['verify'] != md5($_POST['verify'])) {
+          echo '验证码错误';
+          exit;}
+    }
+
+
+
+
 }

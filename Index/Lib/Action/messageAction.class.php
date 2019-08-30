@@ -9,9 +9,17 @@ class messageAction extends Action {
     }
 	public function add_save()
 	{
+	    dump($_POST['data']);die;
+        $classify_id = pg('classify_id');
+          if($classify_id == 220){
+              if($_SESSION['verify'] != md5($_POST['data']['verify'])) {
+                  $this->error('验证码错误');
+              }
+          }
+
 		$data = pg('data');
 		$type_id = $data['type_id'];
-		$classify_id = pg('classify_id');
+
 		$table_name = M('classify_type')->where(array('type_id' => $type_id))->getField('table_name');
 		$content = M($table_name)->where(array($table_name.'_id' => $content_id))->select();
 		$list = M('input')->where(array('type_id' => $type_id, 'show_switch' => 2, 'input_type_id' => 4))->select();
